@@ -1,0 +1,24 @@
+{
+  "name": "vite-plugin-template-html",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "keywords": [
+    "vitejs"
+  ],
+  "author": "includeios",
+  "license": "MIT",
+  "dependencies": {
+    "@rollup/pluginutils": "^5.0.1",
+    "colors": "^1.4.0",
+    "connect-history-api-fallback": "^1.6.0",
+    "ejs": "^3.1.8",
+    "html-minifier-terser": "^7.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.4",
+    "vite": "^3.1.8"
+  },
+  "peerDependencies": {
+    "vite": ">=2.0.0"
+  }
+}
