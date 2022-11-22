@@ -133,7 +133,7 @@ viteHtmlPlugin({
 | ------------------ | --------------------- | ------------ | -------------------------------------------------------- |
 | minify             | `boolean`             | `true`       | whether to compress HTML when building                   |
 | template           | `string`              | `index.html` | relative path to the HTML file                           |
-| route              | `string | RegExp`     | /.*/         | request proxy from route                                 |
+| route              | `string or RegExp`     | /.*/         | request proxy from route                                 |
 | output             | `string`              | -            | custom output filename when building                     |
 | templateParameters | `Record<string, any>` | -            | data injected into HTML                                  |
 | tags               | `HtmlTagDescriptor[]` | -            | list of tags to inject, [Detail from Vite](https://vitejs.dev/guide/api-plugin.html#transformindexhtml)|
@@ -145,7 +145,7 @@ viteHtmlPlugin({
 | Parameter          | Types                 | Default                     | Description                                                     |
 | ------------------ | --------------------- | --------------------------- | --------------------------------------------------------------- |
 | template           | `string`              | -                           | relative path to the HTML file, is **request** in PageOptions   |
-| route              | `string | RegExp`     | `template.lastIndexOf('/')` | request proxy from route, default is template file name         |
+| route              | `string or RegExp`     | `template.lastIndexOf('/')` | request proxy from route, default is template file name         |
 | output             | `string`              | -                           | custom output filename when building                            |
 | templateParameters | `Record<string, any>` | -                           | data injected into HTML                                         |
 | tags               | `HtmlTagDescriptor[]` | -                           | list of tags to inject, [Detail from Vite](https://vitejs.dev/guide/api-plugin.html#transformindexhtml) |

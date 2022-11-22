@@ -11,12 +11,12 @@ specifiers:
 
 dependencies:
   '@rollup/pluginutils': 5.0.1
+  colors: 1.4.0
   connect-history-api-fallback: 1.6.0
   ejs: 3.1.8
   html-minifier-terser: 7.0.0
 
 devDependencies:
-  colors: 1.4.0
   typescript: 4.8.4
   vite: 3.1.8
 
@@ -169,7 +169,7 @@ packages:
   /colors/1.4.0:
     resolution: {integrity: sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA==}
     engines: {node: '>=0.1.90'}
-    dev: true
+    dev: false
 
   /commander/2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
