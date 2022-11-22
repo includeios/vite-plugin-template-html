@@ -1,6 +1,6 @@
 # vite-plugin-template-html
 
-Inspired by [`vite-plugin-html`](https://github.com/vbenjs/vite-plugin-html/blob/main/README.md), we designed a new vite plugin for inject data into html and request proxy. Features such as EJS template, HTML compression are extended. But `vite-plugin-template-html` is more powerful in that it can proxy url requests through a specified HTML file whimsicality, and it is better support for multi-page applications.
+Inspired by [`vite-plugin-html`](https://github.com/vbenjs/vite-plugin-html), we designed a new vite plugin for inject data into html and request proxy. Features such as EJS template, HTML compression are extended. But `vite-plugin-template-html` is more powerful in that it can proxy url requests through a specified HTML file whimsicality, and it is better support for multi-page applications.
 
 **English** | [中文](./README.zh_CN.md)
 

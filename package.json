@@ -1,12 +1,17 @@
 {
   "name": "vite-plugin-template-html",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.ts",
   "keywords": [
     "vitejs"
   ],
   "author": "includeios",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:includeios/vite-plugin-template-html.git"
+  },
+  "homepage": "https://github.com/includeios/vite-plugin-template-html",
   "dependencies": {
     "@rollup/pluginutils": "^5.0.1",
     "colors": "^1.4.0",
@@ -20,9 +25,5 @@
   },
   "peerDependencies": {
     "vite": ">=2.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:includeios/vite-plugin-template-html.git"
   }
 }
