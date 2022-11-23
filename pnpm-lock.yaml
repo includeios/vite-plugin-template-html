@@ -2,6 +2,10 @@ lockfileVersion: 5.4
 
 specifiers:
   '@rollup/pluginutils': ^5.0.1
+  '@types/connect-history-api-fallback': ^1.3.5
+  '@types/ejs': ^3.1.1
+  '@types/html-minifier-terser': ^7.0.0
+  '@types/node': ^18.11.9
   colors: ^1.4.0
   connect-history-api-fallback: ^1.6.0
   ejs: ^3.1.8
@@ -17,6 +21,10 @@ dependencies:
   html-minifier-terser: 7.0.0
 
 devDependencies:
+  '@types/connect-history-api-fallback': 1.3.5
+  '@types/ejs': 3.1.1
+  '@types/html-minifier-terser': 7.0.0
+  '@types/node': 18.11.9
   typescript: 4.8.4
   vite: 3.1.8
 
@@ -91,9 +99,44 @@ packages:
       picomatch: 2.3.1
     dev: false
 
+  /@types/connect-history-api-fallback/1.3.5:
+    resolution: {integrity: sha512-h8QJa8xSb1WD4fpKBDcATDNGXghFj6/3GRWG6dhmRcu0RX1Ubasur2Uvx5aeEwlf0MwblEC2bMzzMQntxnw/Cw==}
+    dependencies:
+      '@types/express-serve-static-core': 4.17.31
+      '@types/node': 18.11.9
+    dev: true
+
+  /@types/ejs/3.1.1:
+    resolution: {integrity: sha512-RQul5wEfY7BjWm0sYY86cmUN/pcXWGyVxWX93DFFJvcrxax5zKlieLwA3T77xJGwNcZW0YW6CYG70p1m8xPFmA==}
+    dev: true
+
   /@types/estree/1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
     dev: false
+
+  /@types/express-serve-static-core/4.17.31:
+    resolution: {integrity: sha512-DxMhY+NAsTwMMFHBTtJFNp5qiHKJ7TeqOo23zVEM9alT1Ml27Q3xcTH0xwxn7Q0BbMcVEJOs/7aQtUWupUQN3Q==}
+    dependencies:
+      '@types/node': 18.11.9
+      '@types/qs': 6.9.7
+      '@types/range-parser': 1.2.4
+    dev: true
+
+  /@types/html-minifier-terser/7.0.0:
+    resolution: {integrity: sha512-hw3bhStrg5e3FQT8qZKCJTrzt/UbEaunU1xRWJ+aNOTmeBMvE3S4Ml2HiiNnZgL8izu0LFVkHUoPFXL1s5QNpQ==}
+    dev: true
+
+  /@types/node/18.11.9:
+    resolution: {integrity: sha512-CRpX21/kGdzjOpFsZSkcrXMGIBWMGNIHXXBVFSH+ggkftxg+XYP20TESbh+zFvFj3EQOl5byk0HTRn1IL6hbqg==}
+    dev: true
+
+  /@types/qs/6.9.7:
+    resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}
+    dev: true
+
+  /@types/range-parser/1.2.4:
+    resolution: {integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==}
+    dev: true
 
   /acorn/8.8.0:
     resolution: {integrity: sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==}
