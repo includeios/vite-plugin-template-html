@@ -1,21 +1,8 @@
 {
   "compilerOptions": {
-    "declaration": true,
-    "allowJs": true,
-    "noEmit": true,
-    "target": "ES2019",
-    "downlevelIteration": true,
-    "noImplicitThis": true,
-    "strictNullChecks": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "moduleResolution": "Node",
-    "forceConsistentCasingInFileNames": true,
-    "newLine": "LF",
-    "resolveJsonModule": true,
-    "jsx": "preserve",
-    "useDefineForClassFields": true,
-    "skipLibCheck": true
+    "target": "ESNext",
+    "module": "ESNext",
+    "experimentalDecorators": true
   },
   "exclude": [
     "node_modules",

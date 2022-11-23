@@ -1,7 +1,8 @@
 {
   "name": "vite-plugin-template-html",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.ts",
+  "type": "module",
   "keywords": [
     "vitejs"
   ],
