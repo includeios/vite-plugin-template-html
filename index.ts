@@ -1,14 +1,13 @@
 import pluginutils from '@rollup/pluginutils';
-import colors from 'colors/safe';
+import * as colors from 'colors/safe';
 import history from 'connect-history-api-fallback';
-import ejs from 'ejs';
+import * as ejs from 'ejs';
 import type { Options as EjsOptions } from 'ejs';
 import htmlMinifierTerser from 'html-minifier-terser';
 import { loadEnv } from 'vite';
-import type { HtmlTagDescriptor, PluginOption } from 'vite';
+import type { HtmlTagDescriptor, PluginOption, ResolvedConfig, Connect } from 'vite';
 
 const DEFAULT_TEMPLATE = 'index.html';
-
 interface RewritesItem {
   from: RegExp;
   to: string;
@@ -38,10 +37,10 @@ type RuntimeOptions = Options & { route?: RegExp, pages?: RuntimePageOptions[] }
 
 const HtmlPlugin = (options: RuntimeOptions): PluginOption => {
   const isMpa = options.pages?.length;
-  let env;
-  let viteConfig;
+  let env: Record<string,string> = {};
+  let viteConfig: ResolvedConfig;
 
-  function getTemplateUrl(templatePath, baseUrl = '') {
+  function getTemplateUrl(templatePath: string | undefined, baseUrl = '') {
     // if set base from vite config, add it
     return baseUrl + (templatePath ?? DEFAULT_TEMPLATE);
   }
@@ -56,7 +55,7 @@ const HtmlPlugin = (options: RuntimeOptions): PluginOption => {
       if (isMpa) {
         options.pages?.forEach(item => {
           const output = item.output ?? item.template.slice(item.template.lastIndexOf('/'));
-          input[output] = item.template;
+          (input as Record<string, string>)[output] = item.template;
         });
       } else if (options.output) {
         input[options.output] = options.template ?? DEFAULT_TEMPLATE;
@@ -89,7 +88,7 @@ const HtmlPlugin = (options: RuntimeOptions): PluginOption => {
         disableDotRule: void 0,
         htmlAcceptHeaders: ['text/html', 'application/xhtml+xml'],
         rewrites,
-      }));
+      }) as Connect.HandleFunction);
     },
     transformIndexHtml: {
       enforce: 'pre',
