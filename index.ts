@@ -131,6 +131,7 @@ const MinifyHtmlPlugin = (): PluginOption => ({
           removeStyleLinkTypeAttributes: true,
           useShortDoctype: true,
           minifyCSS: true,
+          minifyJS: true,
         });
       }
     }
