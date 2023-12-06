@@ -5,7 +5,7 @@ import * as ejs from 'ejs';
 import type { Options as EjsOptions } from 'ejs';
 import htmlMinifierTerser from 'html-minifier-terser';
 import { loadEnv } from 'vite';
-import type { HtmlTagDescriptor, PluginOption, ResolvedConfig, Connect } from 'vite';
+import type { HtmlTagDescriptor, PluginOption, ResolvedConfig, Connect, IndexHtmlTransformHook } from 'vite';
 
 const DEFAULT_TEMPLATE = 'index.html';
 interface RewritesItem {
@@ -43,6 +43,26 @@ const HtmlPlugin = (options: RuntimeOptions): PluginOption => {
   function getTemplateUrl(templatePath: string | undefined, baseUrl = '') {
     // if set base from vite config, add it
     return baseUrl + (templatePath ?? DEFAULT_TEMPLATE);
+  }
+
+  const transformIndexHtml: IndexHtmlTransformHook = async (html, ctx) => {
+    const url = ctx.originalUrl ?? '';
+    const filename = ctx.filename;
+    let parameters = options.templateParameters ?? {};
+    let tags = options.tags ?? [];
+    if (isMpa) {
+      const pageItem = options.pages?.find((item: RuntimePageOptions) =>
+        filename.includes(item.template) || item.route.test(url));
+      parameters = {
+        ...parameters,
+        ...pageItem?.templateParameters,
+      };
+      tags = tags.concat(pageItem?.tags ?? []);
+    }
+    return {
+      html: await ejs.render(html, { ...env, ...viteConfig.define, ...parameters }, options.ejsOptions),
+      tags,
+    };
   }
 
   return {
@@ -91,26 +111,12 @@ const HtmlPlugin = (options: RuntimeOptions): PluginOption => {
       }) as Connect.HandleFunction);
     },
     transformIndexHtml: {
+      // Legacy
       enforce: 'pre',
-      async transform(html, ctx) {
-        const url = ctx.originalUrl ?? '';
-        const filename = ctx.filename;
-        let parameters = options.templateParameters ?? {};
-        let tags = options.tags ?? [];
-        if (isMpa) {
-          const pageItem = options.pages?.find((item: RuntimePageOptions) =>
-            filename.includes(item.template) || item.route.test(url));
-          parameters = {
-            ...parameters,
-            ...pageItem?.templateParameters,
-          };
-          tags = tags.concat(pageItem?.tags ?? []);
-        }
-        return {
-          html: await ejs.render(html, { ...env, ...viteConfig.define, ...parameters }, options.ejsOptions),
-          tags,
-        };
-      },
+      transform: transformIndexHtml,
+      // After Vite 4.x
+      order: 'pre',
+      handler: transformIndexHtml,
     },
   };
 };
