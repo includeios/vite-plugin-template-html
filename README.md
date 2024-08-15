@@ -4,7 +4,7 @@ Inspired by [`vite-plugin-html`](https://github.com/vbenjs/vite-plugin-html), we
 
 **English** | [中文](./README.zh_CN.md)
 
-[![npm][npm-img]][npm-url] [![node][node-img]][node-url]
+[![npm][npm-img]][npm-url]
 
 ## Features
 
@@ -154,7 +154,5 @@ viteHtmlPlugin({
 
 MIT
 
-[npm-img]: https://img.shields.io/npm/v/vite-plugin-html.svg
-[npm-url]: https://npmjs.com/package/vite-plugin-html
-[node-img]: https://img.shields.io/node/v/vite-plugin-html.svg
-[node-url]: https://nodejs.org/en/about/releases/
+[npm-img]: https://img.shields.io/npm/v/vite-plugin-template-html.svg
+[npm-url]: https://npmjs.com/package/vite-plugin-template-html
