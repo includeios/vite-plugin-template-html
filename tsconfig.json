@@ -6,14 +6,12 @@
     "declaration": true,
     "noUnusedLocals": true,
     "esModuleInterop": true,
-    "outDir": "./dist",
-    "module": "commonjs",
-    "sourceMap": true,
-    "allowSyntheticDefaultImports": true,
+    "rootDir": "src",
+    "outDir": "dist",
+    "module": "ES2020",
     "skipLibCheck": true
   },
-  "exclude": [
-    "node_modules",
-    "dist"
+  "include": [
+    "src"
   ]
 }
