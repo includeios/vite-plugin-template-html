@@ -180,4 +180,4 @@ function viteTemplateHtml(options: Options) {
   return plugins;
 }
 
-export = viteTemplateHtml;
+export default viteTemplateHtml;
