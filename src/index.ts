@@ -1,5 +1,5 @@
 import pluginutils from '@rollup/pluginutils';
-import * as colors from 'colors/safe';
+import * as colors from 'colors/safe.js';
 import history from 'connect-history-api-fallback';
 import * as ejs from 'ejs';
 import type { Options as EjsOptions } from 'ejs';
