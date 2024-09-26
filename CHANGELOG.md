@@ -1,5 +1,12 @@
 
 
+## [1.1.1](https://github.com/includeios/vite-plugin-template-html/compare/v1.1.0...v1.1.1) (2024-09-26)
+
+
+### Bug Fixes
+
+* esm path ([4541d2c](https://github.com/includeios/vite-plugin-template-html/commit/4541d2c873ecff927566bdce3f1c3fc96036326e))
+
 ## 1.1.0 (2024-08-20)
 
 
